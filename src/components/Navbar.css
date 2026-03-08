@@ -1,0 +1,95 @@
+/* src/components/Navbar.css */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  padding: 0 48px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar.scrolled {
+  background: rgba(247, 244, 239, 0.97);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+  backdrop-filter: blur(16px);
+}
+
+.navbar.top {
+  background: transparent;
+  border-bottom: 1px solid transparent;
+}
+
+.navbar__logo {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: color 0.4s;
+}
+
+.navbar__logo .dot {
+  color: var(--gold);
+}
+
+.navbar.scrolled .navbar__logo { color: var(--navy); }
+.navbar.top      .navbar__logo { color: var(--white); }
+
+.navbar__spacer { flex: 1; }
+
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.navbar__link {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.3s;
+}
+
+.navbar.scrolled .navbar__link        { color: var(--text-mid); }
+.navbar.scrolled .navbar__link.active { color: var(--gold-dim); }
+.navbar.top      .navbar__link        { color: rgba(247, 244, 239, 0.75); }
+.navbar.top      .navbar__link.active { color: var(--gold-light); }
+
+.navbar__link:hover { color: var(--gold) !important; }
+
+.navbar__link-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--gold);
+}
+
+.navbar__cta {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 10px 24px;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  text-decoration: none;
+  transition: all 0.3s;
+  background: transparent;
+}
+
+.navbar__cta:hover {
+  background: var(--gold);
+  color: var(--navy);
+}
